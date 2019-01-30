@@ -1,10 +1,25 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TextInput } from 'react-native';
 
 class Greeting extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {text: 'App just launched.'};
+  }
+
   render() {
     return (
-      <Text>Hello {this.props.name}</Text>
+      <View>
+        <Text>Hello {this.props.name}</Text>
+        <TextInput
+          style={{height: 40}}
+          placeholder="hello world"
+          onChangeText={(text) => this.setState({text})}
+        />
+        <Text style={{padding: 10, fontSize: 42}}>
+          {this.state.text}
+        </Text>
+      </View>
     );
   }
 }
@@ -13,9 +28,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Greeting name="React Native"></Greeting>
-        <Greeting name="Expo"></Greeting>
-        <Greeting name="Firebase"></Greeting>
+        <Greeting name="Enter some text below."></Greeting>
       </View>
     );
   }
@@ -24,7 +37,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0f0',
+    backgroundColor: '#bf0',
     alignItems: 'center',
     justifyContent: 'center',
   },
