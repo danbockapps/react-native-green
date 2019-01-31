@@ -1,10 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, Alert } from 'react-native';
 
 class Greeting extends React.Component {
   constructor(props) {
     super(props);
     this.state = {text: 'App just launched.'};
+  }
+
+  _onPressButton = () => {
+    Alert.alert(`You entered: ${this.state.text}`);
   }
 
   render() {
@@ -19,6 +23,10 @@ class Greeting extends React.Component {
         <Text style={{padding: 10, fontSize: 42}}>
           {this.state.text}
         </Text>
+        <Button
+          onPress={this._onPressButton}
+          title="Submit"
+        />
       </View>
     );
   }
