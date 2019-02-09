@@ -1,7 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import { Provider } from 'react-redux';
-import Greeting from './Greeting';
+import { StyleSheet, Text, View } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {

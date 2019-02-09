@@ -1,12 +1,10 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { createAppContainer, createStackNavigator } from 'react-navigation';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import Greeting from './Greeting';
-import rootReducer from './reducers/rootReducer';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
 import HomeScreen from './HomeScreen';
 import ProfileScreen from './ProfileScreen';
+import rootReducer from './reducers/rootReducer';
 
 const store = createStore(rootReducer);
 

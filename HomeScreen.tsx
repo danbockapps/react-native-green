@@ -1,9 +1,7 @@
 import React from 'react';
-import { StyleSheet, View, Button } from 'react-native';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { Button, StyleSheet, View } from 'react-native';
+import { NavigationScreenProp } from 'react-navigation';
 import Greeting from './Greeting';
-import rootReducer from './reducers/rootReducer';
 
 const styles = StyleSheet.create({
   container: {
@@ -14,7 +12,11 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class HomeScreen extends React.Component {
+interface HomeScreenProps {
+  navigation: NavigationScreenProp<any, any>
+};
+
+export default class HomeScreen extends React.Component<HomeScreenProps> {
   static navigationOptions = {
     title: 'Profile Screen',
   };
